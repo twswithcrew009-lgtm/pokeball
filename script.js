@@ -64,22 +64,16 @@ const pokemonDatabase = [
 
 // DOM Elements
 const barcodeInput = document.getElementById('barcodeInput');
-const scanBtn = document.getElementById('scanBtn');
 const card = document.getElementById('card');
-const flipBtn = document.getElementById('flipBtn');
-const resetBtn = document.getElementById('resetBtn');
 const cardImage = document.getElementById('cardImage');
 const pokemonName = document.getElementById('pokemonName');
 const pokemonNumber = document.getElementById('pokemonNumber');
 
 // Event Listeners
-scanBtn.addEventListener('click', handleScan);
 barcodeInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleScan();
 });
 card.addEventListener('click', toggleCardFlip);
-flipBtn.addEventListener('click', toggleCardFlip);
-resetBtn.addEventListener('click', resetCard);
 
 // Functions
 function getRandomPokemon() {
@@ -90,7 +84,6 @@ function handleScan() {
     const barcodeValue = barcodeInput.value.trim();
     
     if (!barcodeValue) {
-        alert('Please enter or scan a barcode!');
         return;
     }
 
@@ -105,7 +98,7 @@ function handleScan() {
     // Reset card to front view
     card.classList.remove('flipped');
     
-    // Flip card after a short delay to show the transition
+    // Flip card after a short delay
     setTimeout(() => {
         card.classList.add('flipped');
     }, 300);
@@ -119,14 +112,5 @@ function toggleCardFlip() {
     card.classList.toggle('flipped');
 }
 
-function resetCard() {
-    card.classList.remove('flipped');
-    barcodeInput.value = '';
-    cardImage.src = '';
-    pokemonName.textContent = 'Pokémon Name';
-    pokemonNumber.textContent = 'Card #000';
-    barcodeInput.focus();
-}
-
-// Auto focus on input for barcode scanning
+// Auto focus on input
 barcodeInput.focus();
