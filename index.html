@@ -8,32 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🎴 Pokéball Card Scanner</h1>
-            <p>Scan a barcode to reveal a random Pokémon card!</p>
-        </header>
-
-        <div class="scanner-section">
-            <div class="input-group">
-                <label for="barcodeInput">Barcode Input:</label>
-                <input 
-                    type="text" 
-                    id="barcodeInput" 
-                    placeholder="Scan barcode or enter code..." 
-                    autofocus
-                >
-                <button id="scanBtn">Scan</button>
-            </div>
-            <p class="hint">💡 Try entering any number or click "Scan" to get a random card</p>
-        </div>
+        <input 
+            type="text" 
+            id="barcodeInput" 
+            placeholder="Scan barcode..."
+            autofocus
+        >
 
         <div class="card-container">
             <div class="card" id="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <div class="pokemon-placeholder">
-                            <span>📱</span>
-                        </div>
+                        <div class="pokemon-placeholder">🎴</div>
                     </div>
                     <div class="card-back">
                         <img id="cardImage" src="" alt="Pokémon Card">
@@ -44,22 +30,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="controls">
-            <button id="flipBtn" class="btn-secondary">Flip Card</button>
-            <button id="resetBtn" class="btn-secondary">Reset</button>
-        </div>
-
-        <div class="info-section">
-            <h3>How to Use:</h3>
-            <ul>
-                <li>Scan a barcode using a barcode scanner device</li>
-                <li>Or manually enter a number and click "Scan"</li>
-                <li>The card will flip to reveal a random Pokémon</li>
-                <li>Use "Flip Card" to manually flip the card</li>
-                <li>Use "Reset" to clear and start over</li>
-            </ul>
         </div>
     </div>
 
