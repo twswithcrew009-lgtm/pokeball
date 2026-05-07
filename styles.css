@@ -15,91 +15,39 @@ body {
 }
 
 .container {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     width: 100%;
 }
 
-header {
+#barcodeInput {
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border: 3px solid white;
+    border-radius: 8px;
+    width: 300px;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #666;
-    font-size: 1.1em;
-}
-
-.scanner-section {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-}
-
-.input-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.input-group label {
-    font-weight: 600;
-    color: #333;
-    align-self: center;
-    min-width: 120px;
-}
-
-.input-group input {
-    flex: 1;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus {
     outline: none;
-    border-color: #667eea;
+    transition: all 0.3s;
 }
 
-.input-group button {
-    padding: 12px 24px;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
+#barcodeInput:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
-.input-group button:hover {
-    background: #5568d3;
-}
-
-.hint {
+#barcodeInput::placeholder {
     color: #999;
-    font-size: 0.9em;
 }
 
 /* Card Flip Animation */
 .card-container {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
-    height: 400px;
     perspective: 1000px;
+    height: 400px;
 }
 
 .card {
@@ -131,7 +79,7 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card-front {
@@ -183,72 +131,8 @@ header p {
     }
 }
 
-/* Controls */
-.controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.btn-secondary {
-    padding: 12px 24px;
-    background: #f0f0f0;
-    color: #333;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-secondary:hover {
-    background: #764ba2;
-    color: white;
-    border-color: #764ba2;
-}
-
-/* Info Section */
-.info-section {
-    background: #f0f7ff;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid #667eea;
-}
-
-.info-section h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.info-section ul {
-    list-style-position: inside;
-    color: #666;
-    line-height: 1.8;
-}
-
-.info-section li {
-    margin-bottom: 5px;
-}
-
 /* Responsive Design */
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-
-    .input-group label {
-        min-width: auto;
-    }
-
     .card-container {
         height: 300px;
     }
@@ -262,15 +146,8 @@ header p {
         font-size: 50px;
     }
 
-    .card-back img {
-        height: 60%;
-    }
-
-    .controls {
-        flex-direction: column;
-    }
-
-    .btn-secondary {
-        width: 100%;
+    #barcodeInput {
+        width: 250px;
+        font-size: 1em;
     }
 }
